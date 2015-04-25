@@ -1,3 +1,9 @@
+def bold_format(msg):
+    return "\033[1m%s\033[0m" % str(msg)
+
+def info(msg):
+    print bold_format(msg)
+
 class Dialog(object):
     def __init__(self, header):
         self.header = header

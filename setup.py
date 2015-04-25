@@ -6,5 +6,5 @@ setup(
     author='Nic Roland',
     author_email='nicroland9@gmail.com',
     packages=['dialog'],
-    description="command line dialogs made easy.",
+    description="Command line dialogs made easy.",
 )
