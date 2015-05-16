@@ -7,4 +7,5 @@ setup(
     author_email='nicroland9@gmail.com',
     packages=['dialog'],
     description="Command line dialogs made easy.",
+    url = 'https://github.com/nicr9/dialog',
 )
