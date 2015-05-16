@@ -59,3 +59,9 @@ d.secret()
 
 sign_in(username, d.result)
 ```
+
+## Author
+
+Name: Nic Roland<br>
+Twitter: [@nicr9_](https://twitter.com/nicr9_)<br>
+email: nicroland9@gmail.com
