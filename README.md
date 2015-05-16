@@ -49,3 +49,13 @@ d.yesno()
 if d.result:
     quit()
 ```
+
+Finally, you can also ask users for passwords. This is like the `Dialog.input()`
+method shown above but it doesn't display what the user is typing:
+
+```
+d = Dialog("Please enter your password")
+d.secret()
+
+sign_in(username, d.result)
+```
