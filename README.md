@@ -1,4 +1,4 @@
-# dialog
+# pydialog
 
 __Command line dialogs made easy.__
 
@@ -7,8 +7,8 @@ __Command line dialogs made easy.__
 From github:
 
 ```
-git clone https://github.com/nicr9/dialog.git
-cd dialog
+git clone https://github.com/nicr9/pydialog.git
+cd pydialog
 sudo python2.7 setup.py install
 ```
 
@@ -17,7 +17,7 @@ sudo python2.7 setup.py install
 First things first, import `Dialog`:
 
 ```
-from dialog import Dialog
+from pydialog import Dialog
 ```
 
 This is used to make a variety of different dialogs for collecting user input.
