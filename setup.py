@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-VERSION = 'v0.1'
+VERSION = 'v0.2'
 
 setup(
         name='pydialog',
