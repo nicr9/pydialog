@@ -1,12 +1,12 @@
 from sys import exit
 def bold_format(msg):
-    return "\033[1m%s\033[0m" % str(msg)
+    return "\033[1m{}n033[0m".format(str(msg))
 
 def info(msg):
-    print bold_format(msg)
+    print(bold_format(msg))
 
 def bail(msg=None):
-    info("\nExiting: %s" % msg if msg else "\nExiting...")
+    info("\nExiting: {}".format(msg if msg else "\nExiting..."))
     exit()
 
 class Dialog(object):
@@ -22,14 +22,14 @@ class Dialog(object):
         self._validate()
 
         if self.header is not None:
-            info("%s : " % self.header)
+            info("{} : ".format(self.header))
 
         indexed = values.keys() if isinstance(values, dict) else values
         for indx, val in enumerate(indexed):
             if subvalue:
-                print " %d) %s" % (indx, val[subvalue])
+                print(" {}) {}".format(indx, val[subvalue]))
             else:
-                print " %d) %s" % (indx, val)
+                print(" {}) {}".format(indx, val))
 
         while True:
             try:
@@ -61,9 +61,9 @@ class Dialog(object):
         self._validate()
 
         if default is None or default is "":
-            prompt = "%s : " % self.header
+            prompt = "{} : ".format(self.header)
         else:
-            prompt = "%s [%s] : " % (self.header, default)
+            prompt = "{} [{}] : ".format(self.header, default)
 
         bold_prompt = bold_format(prompt)
 
@@ -74,7 +74,7 @@ class Dialog(object):
                 bail()
 
             if temp == "" and default is None:
-                print "Try again"
+                print("Try again")
                 continue
             else:
                 temp = temp if temp != "" else default
@@ -82,14 +82,14 @@ class Dialog(object):
                     self.result = temp if not parse else parse(temp)
                 except:
                     raise Exception(
-                            "Failed to parse input %s using %s" % (temp, str(parse))
+                            "Failed to parse input {} using {}".format(temp, str(parse))
                             )
                 break
 
     def yesno(self, yes='y', no='n'):
         self._validate()
 
-        prompt = bold_format("%s (%s/%s) : " % (self.header, yes, no))
+        prompt = bold_format("{} ({}/{}) : ".format(self.header, yes, no))
 
         try:
             temp = raw_input(prompt)
@@ -107,7 +107,7 @@ class Dialog(object):
         self._validate()
 
         try:
-            prompt = bold_format("%s : " % self.header)
+            prompt = bold_format("{} : ".format(self.header))
             self.result = getpass(prompt)
         except KeyboardInterrupt:
             bail()

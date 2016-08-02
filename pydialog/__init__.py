@@ -1,2 +1,2 @@
-from pydialog import Dialog
+from .pydialog import Dialog
 __all__ = ['Dialog']
